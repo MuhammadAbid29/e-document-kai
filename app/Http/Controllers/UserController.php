@@ -99,7 +99,7 @@ class UserController extends Controller
 
             'name' => $request->name,
 
-            // update email juga
+           
             'email' => $request->nip . '@kai.local',
 
             'divisi_id' => $request->divisi_id,

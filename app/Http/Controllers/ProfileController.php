@@ -12,9 +12,7 @@ use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
-    /**
-     * Display the user's profile form.
-     */
+    
     public function edit(Request $request): View
     {
         return view('profile.edit', [
@@ -23,18 +21,14 @@ class ProfileController extends Controller
     }
 
 
-    /**
-     * Show profile (UI KAI)
-     */
+   
     public function show()
     {
         return view('profile.edit');
     }
 
 
-    /**
-     * Upload profile photo
-     */
+    
     public function uploadPhoto(Request $request)
     {
 
@@ -48,14 +42,14 @@ class ProfileController extends Controller
 
         if ($request->hasFile('photo')) {
 
-            // hapus lama
+            
             if ($user->photo) {
 
                 Storage::delete('public/'.$user->photo);
 
             }
 
-            // simpan baru
+            
             $path = $request->file('photo')
                 ->store('profile', 'public');
 
@@ -72,9 +66,7 @@ class ProfileController extends Controller
     }
 
 
-    /**
-     * Update profile info (default Breeze)
-     */
+    
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
         $request->user()->fill($request->validated());
@@ -90,9 +82,7 @@ class ProfileController extends Controller
     }
 
 
-    /**
-     * Delete account
-     */
+    
     public function destroy(Request $request): RedirectResponse
     {
 

@@ -16,7 +16,7 @@
 </div>
 
 
-<!-- SEARCH + BUTTON (DI BAWAH JUDUL) -->
+<!-- SEARCH + BUTTON  -->
 <div class="flex justify-end items-center gap-3 mb-6">
 
     <form method="GET">

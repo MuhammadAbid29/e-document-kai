@@ -34,7 +34,7 @@ class DivisiController extends Controller
     $nama = strtoupper($request->nama_divisi);
 
 
-    // ambil singkatan
+   
     $kata = explode(' ', $nama);
 
     if(count($kata) == 1)
@@ -51,7 +51,7 @@ class DivisiController extends Controller
     }
 
 
-    // hitung jumlah divisi dengan singkatan sama
+    
     $jumlah = Divisi::where('kode_divisi','like',"DIV-$singkatan-%")->count() + 1;
 
 
